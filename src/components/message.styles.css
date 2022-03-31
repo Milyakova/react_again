@@ -3,10 +3,12 @@
 }
 .btn {
   height: 40px;
-  font-weight: 100;
+  font-weight: bold;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
   margin-right: 50px;
+  color: rgb(41, 42, 42);
+  background-color: rgb(187, 163, 207);
 }
 .code-wrapper {
   display: none;

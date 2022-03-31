@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  color: rgb(199, 199, 182);
+  font-size: medium;
+  line-height: 2;
 }
 
 .App-logo {
@@ -35,4 +38,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+.input {
+  padding: 10px 10px;
 }

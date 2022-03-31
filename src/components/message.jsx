@@ -1,4 +1,5 @@
 import React from "react";
+import "./message.styles.css";
 export const Message = ({ content }) => {
   return (
     <div>

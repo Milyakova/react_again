@@ -43,15 +43,19 @@ function App() {
   const [value, setValue] = useState("");
 
   useEffect(() => {
+    let timeout;
     if (messages[messages.length - 1]?.author === "Вы: ") {
-      setTimeout(() => {
+      timeout = setTimeout(() => {
         const randomNum = Math.floor(Math.random() * answersList.length);
         setMessages((prevMessages) => [
           ...prevMessages,
           answersList[randomNum],
         ]);
-      }, 2000);
+      }, 1000);
     }
+    return () => {
+      clearTimeout(timeout);
+    };
   }, [messages]);
 
   const handleAddMessage = () => {
@@ -80,7 +84,7 @@ function App() {
         <Message key={i} content={message} />
       ))}
       <button onClick={handleAddMessage} className="btn">
-        Задать вопрос
+        Дайте мысль
       </button>
       <form onSubmit={handleSubmit}>
         <input value={value} onChange={handleChange} className="input"></input>
