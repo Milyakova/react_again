@@ -1,8 +1,4 @@
 import React from "react";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import Avatar from "@mui/material/Avatar";
 
 export default function ItemsList() {
   const mychats = [
@@ -21,14 +17,18 @@ export default function ItemsList() {
   ];
 
   return (
-    <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-      {mychats.map((chat) => {
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt={chat.name} src="../../img" />
-          </ListItemAvatar>
-        </ListItem>;
-      })}
-    </List>
+    <ul class="list-group">
+      {mychats.map((chat) => (
+        <li
+          key={chat.id}
+          className="list-group-item d-flex justify-content-between align-items-center"
+        >
+          {chat.name}
+          <span class="badge bg-primary rounded-pill mx-4">
+            {Math.ceil(Math.random() * 15)}
+          </span>
+        </li>
+      ))}
+    </ul>
   );
 }

@@ -44,13 +44,15 @@ function App() {
   };
 
   return (
-    <div className="App" ref={wrapperRef}>
-      <div className="flex-container">
+    <div className="App container my-5" ref={wrapperRef}>
+      <div className="d-flex justify-content-around">
         <ItemsList />
         <div>
           <MessageList messages={messages} />
           <Form onSubmit={sendMessage} />
-          <button onClick={handleScroll}>scroll</button>
+          <button className="btn btn-primary" onClick={handleScroll}>
+            scroll
+          </button>
         </div>
       </div>
     </div>
