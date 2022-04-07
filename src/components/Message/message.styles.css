@@ -1,7 +1,9 @@
 .message {
-  color: red;
+  color: rgb(56, 46, 66);
+  background-color: #fff;
+  background-size: contain;
 }
 
 .header {
-  font-weight: 200;
+  font-weight: 300;
 }

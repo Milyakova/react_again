@@ -3,7 +3,7 @@ import "./message.styles.css";
 
 export const Message = ({ author, text }) => {
   return (
-    <div className="message">
+    <div className="rounded-3 message m-3 w-75">
       <span>{author}:</span>
       <span>{text}</span>
     </div>
