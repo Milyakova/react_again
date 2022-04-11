@@ -25,7 +25,7 @@ export const ChatsList = () => (
               key={chat.id}
               className="list-group-item d-flex justify-content-between align-items-center"
             >
-              <Avatar alt="Remy Sharp" src="img/LEGO.jpg" />
+              <Avatar alt="Remy Sharp" src="../img/LEGO.jpg" />
               {chat.name}
               <span class="badge bg-primary rounded-pill mx-4">
                 {Math.ceil(Math.random() * 15)}

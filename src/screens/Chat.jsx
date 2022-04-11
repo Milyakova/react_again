@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router";
+import { useParams, Navigate } from "react-router";
 
 import { Form } from "../components/Form/Form";
 import { MessageList } from "../components/MessageList/MessageList";
@@ -70,9 +70,9 @@ export function Chat() {
     };
   }, [messages]);
 
-  // if (!messages[id]) {
-  //   return <Navigate to="/chat" replace />;
-  // }
+  if (!messages[id]) {
+    return <Navigate to="/chat" replace />;
+  }
 
   return (
     <div ref={wrapperRef}>
