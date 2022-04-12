@@ -44,3 +44,9 @@
 .input {
   padding: 10px 10px;
 }
+.bord {
+  background-color: #282c34;
+  height: 95vh;
+  border-radius: 3%;
+  color: aliceblue;
+}

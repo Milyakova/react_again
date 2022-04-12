@@ -16,27 +16,29 @@ function App() {
     <Provider store={store}>
       <ThemeContext.Provider value={theme}>
         <BrowserRouter>
-          <div className="container my-5">
-            <nav class="nav nav-pills flex-column w-25 p-3 ">
-              <NavLink className="nav-link" to="/">
-                Home
-              </NavLink>
-              <NavLink className="nav-link" to="/profile">
-                Profile
-              </NavLink>
-              <NavLink className="nav-link" to="/chat">
-                Chat
-              </NavLink>
-            </nav>
+          <div className="container">
+            <div className="bord my-5 ">
+              <nav class="nav nav-pills p-3  nav-fill ">
+                <NavLink className="nav-link" to="/">
+                  Home
+                </NavLink>
+                <NavLink className="nav-link" to="/profile">
+                  Profile
+                </NavLink>
+                <NavLink className="nav-link" to="/chat">
+                  Chat
+                </NavLink>
+              </nav>
 
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/chat" element={<ChatsList />}>
-                <Route path=":id" element={<Chat />} />
-              </Route>
-              <Route path="*" element={<h4>404</h4>} />
-            </Routes>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/chat" element={<ChatsList />}>
+                  <Route path=":id" element={<Chat />} />
+                </Route>
+                <Route path="*" element={<h4>404</h4>} />
+              </Routes>
+            </div>
           </div>
         </BrowserRouter>
       </ThemeContext.Provider>
