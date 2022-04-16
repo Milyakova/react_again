@@ -1,4 +1,4 @@
-import { TOGGLE_CHECKBOX } from "./actions";
+import { SET_NAME, TOGGLE_CHECKBOX } from "./actions";
 
 const initialState = {
   name: "Jack Sparrow",
@@ -7,8 +7,15 @@ const initialState = {
 export const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_CHECKBOX:
-      return { ...state, showName: !state.showName };
-
+      return {
+        ...state,
+        showName: !state.showName,
+      };
+    case SET_NAME:
+      return {
+        ...state,
+        name: action.payload,
+      };
     default:
       return state;
   }

@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 
 import "./form.styles.css";
 
-export const Form = ({ onSubmit }) => {
+export const Form = ({ onSubmit, buttonName = "submit" }) => {
   const [value, setValue] = useState("");
 
   const inputRef = useRef();
@@ -30,12 +30,17 @@ export const Form = ({ onSubmit }) => {
   }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="d-inline-flex">
       {/* <input value={value} onChange={handleChange} type="text" ref={inputRef} /> */}
       {/* <input type="submit" /> */}
-      <TextField value={value} onChange={handleChange} inputRef={inputRef} />
+      <TextField
+        className="textfield"
+        value={value}
+        onChange={handleChange}
+        inputRef={inputRef}
+      />
       <Button className="btn" type="submit" variant="contained">
-        Submit
+        {buttonName}
       </Button>
     </form>
   );

@@ -1,3 +1,7 @@
 .mybtn.MuiButton-root:hover {
   background-color: green;
 }
+.textfield {
+  background-color: #fff;
+  border-radius: 7px;
+}

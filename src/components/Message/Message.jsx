@@ -6,17 +6,22 @@ import "./message.styles.css";
 export const Message = ({ author, text }) => {
   const theme = useContext(ThemeContext);
   return (
-    <div className="rounded-3 message m-3 w-75">
+    <div className="rounded-3 message m-3 mw-75">
       <span>{author}:</span>
       <span>{text}</span>
     </div>
   );
 };
 
+const withThemeContext = (Component) => (props) => {
+  const { theme } = useContext(ThemeContext);
+  return <Component {...props} theme={theme} />;
+};
 Message.propTypes = {
   author: PropTypes.string.isRequired,
   text: PropTypes.string,
 };
+export const MessageWithBlueColor = withThemeContext(Message);
 
 // import React from "react";
 

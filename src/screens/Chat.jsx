@@ -52,14 +52,14 @@ export function Chat({ messages, addMessage }) {
     };
   }, [messages]);
 
-  if (!messages[id]) {
-    return <Navigate to="/chat" replace />;
-  }
+  // if (!messages[id]) {
+  //   return <Navigate to="/chat" replace />;
+  // }
 
   return (
-    <div ref={wrapperRef}>
+    <div className="mw-75" ref={wrapperRef}>
       <MessageList messages={messages[id]} />
-      <Form onSubmit={sendMessage} />
+      <Form onSubmit={sendMessage} buttonName="submit" className="m-3" />
     </div>
   );
 }
