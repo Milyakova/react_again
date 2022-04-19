@@ -19,7 +19,7 @@ export const messagesReducer = (
       console.log("state, payload", state, payload);
       return {
         ...state,
-        [payload.id]: [...state[payload.id], payload.newMsg],
+        [payload.chatId]: [...state[payload.chatId], payload.newMsg],
       };
 
     case ADD_NEW_CHAT_MESSAGE:

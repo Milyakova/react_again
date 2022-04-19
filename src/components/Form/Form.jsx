@@ -11,7 +11,6 @@ export const Form = ({ onSubmit, buttonName = "submit" }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     onSubmit(value);
     setValue("");
   };

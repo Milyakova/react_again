@@ -1,64 +1,69 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams, Navigate } from "react-router";
 
 import { Form } from "../components/Form/Form";
 import { MessageList } from "../components/MessageList/MessageList";
+import { addMessageWithReply, addNewMessage } from "../store/messages/actions";
+
+import {
+  selectMessages,
+  selectMessagesByChatId,
+} from "../store/messages/selectors";
 import { AUTHORS } from "../utils/constants";
 import "./Chat.css";
 
-// const name = "value";
-
-// const obj = {
-//   name: 1,
-//   [name]: 2,
-// };
-
-// console.log(obj.name, obj.value);
-
-export function Chat({ messages, addMessage }) {
+export function Chat() {
   const { id } = useParams();
-
+  const getMessages = useMemo(() => selectMessagesByChatId(id), [id]); //useMemo выполнит коллбэк и вернет рез-т в переменную запомнит эту ссылку
+  //запомнит эту ссылку и будет ее перевычислять только если изменится что-то в его массиве зависимостей
+  const messages = useSelector(getMessages);
   const timeout = useRef();
   const wrapperRef = useRef();
+  const dispatch = useDispatch();
 
   const sendMessage = (text) => {
-    addMessage(
-      {
-        author: AUTHORS.human,
-        text,
-        id: `msg-${Date.now()}`,
-      },
-      id
+    dispatch(
+      addMessageWithReply(
+        {
+          author: AUTHORS.human,
+          text,
+          id: `msg-${Date.now()}`,
+        },
+        id
+      )
     );
   };
 
-  useEffect(() => {
-    const lastMessage = messages[id]?.[messages[id]?.length - 1];
-    if (lastMessage?.author === AUTHORS.human) {
-      timeout.current = setTimeout(() => {
-        addMessage(
-          {
-            author: AUTHORS.robot,
-            text: "hello friend",
-            id: `msg-${Date.now()}`,
-          },
-          id
-        );
-      }, 1000);
-    }
+  // useEffect(() => {
+  //   const lastMessage = messages?.[messages?.length - 1];
+  //   if (lastMessage?.author === AUTHORS.human) {
+  //     timeout.current = setTimeout(() => {
+  //       dispatch(
+  //         addNewMessage(
+  //           {
+  //             author: AUTHORS.robot,
+  //             text: "hello friend",
+  //             id: `msg-${Date.now()}`,
+  //           },
+  //           id
+  //         )
+  //       );
+  //     }, 1000);
+  //   }
 
-    return () => {
-      clearTimeout(timeout.current);
-    };
-  }, [messages]);
+  //   return () => {
+  //     clearTimeout(timeout.current);
+  //   };
+  // }, [messages]);
 
-  // if (!messages[id]) {
-  //   return <Navigate to="/chat" replace />;
-  // }
+  if (!messages) {
+    return <Navigate to="/chat" replace />;
+  }
 
   return (
     <div className="mw-75" ref={wrapperRef}>
-      <MessageList messages={messages[id]} />
+      <MessageList messages={messages} />
       <Form onSubmit={sendMessage} buttonName="submit" className="m-3" />
     </div>
   );

@@ -18,7 +18,7 @@ export const Profile = () => {
   return (
     <div className="container">
       <h3>Profile Page</h3>
-      {showName && <span>{state.name}</span>}
+      {showName && <span>{state}</span>}
       <FormGroup>
         <FormControlLabel
           control={<Checkbox onClick={handleClick} />}

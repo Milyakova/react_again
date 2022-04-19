@@ -2,7 +2,7 @@ import { SET_NAME, TOGGLE_CHECKBOX } from "./actions";
 
 const initialState = {
   name: "Jack Sparrow",
-  showName: false,
+  showName: true,
 };
 export const profileReducer = (state = initialState, action) => {
   switch (action.type) {
