@@ -2,6 +2,7 @@
   color: rgb(56, 46, 66);
   background-color: #fff;
   background-size: contain;
+  max-width: 75%;
 }
 
 .header {

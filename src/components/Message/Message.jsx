@@ -6,8 +6,12 @@ import "./message.styles.css";
 export const Message = ({ author, text }) => {
   const theme = useContext(ThemeContext);
   return (
-    <div className="rounded-3 message m-3 mw-75">
-      <span>{author}:</span>
+    <div
+      className={`rounded-3 message mb-2 p-1 align-self-${
+        author === "me" ? "start" : "end"
+      } `}
+    >
+      <span>{author}: </span>
       <span>{text}</span>
     </div>
   );

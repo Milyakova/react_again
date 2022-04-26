@@ -62,7 +62,7 @@ export function Chat() {
   }
 
   return (
-    <div className="mw-75" ref={wrapperRef}>
+    <div className="w-50 mb-5" ref={wrapperRef}>
       <MessageList messages={messages} />
       <Form onSubmit={sendMessage} buttonName="submit" className="m-3" />
     </div>

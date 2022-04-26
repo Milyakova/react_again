@@ -1,15 +1,17 @@
 import React from "react";
 import home from "../img/home.png";
+import "./Home.css";
 
-export const Home = () => {
+export const Home = ({ onAuth }) => {
   return (
-    <div className="d-flex flex-column align-items-center my-5">
-      <h1 className="display-1 home-header">Welcome to messenger</h1>
-      <img src={home} width="50%" alt="..."></img>
-      <span>
-        PNG разработан Dr_J, из{" "}
-        <a href="https://ru.pngtree.com"> Pngtree.com</a>
-      </span>
-    </div>
+    <>
+      <div className="d-flex flex-column align-items-center my-5 bcground">
+        <h1 className="display-1 home-header">Welcome to messenger</h1>
+        <button className="btn btn-primary" onClick={onAuth}>
+          Login
+        </button>
+      </div>
+      <img className="home" src={home} alt="..."></img>
+    </>
   );
 };
