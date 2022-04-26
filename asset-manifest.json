@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/react_again/static/css/main.dfee8498.css",
-    "main.js": "/react_again/static/js/main.50f0d85c.js",
+    "main.css": "/react_again/static/css/main.0c51b46f.css",
+    "main.js": "/react_again/static/js/main.59ff223f.js",
     "static/js/787.d3befce1.chunk.js": "/react_again/static/js/787.d3befce1.chunk.js",
+    "static/media/green.png": "/react_again/static/media/green.017f20d7dd5d63381988.png",
     "static/media/chat_bgd.jpg": "/react_again/static/media/chat_bgd.dc2e8d0ad14d0aa9c43f.jpg",
     "static/media/LEGO.jpg": "/react_again/static/media/LEGO.879873f1f32f7e5e7196.jpg",
     "static/media/home.png": "/react_again/static/media/home.2bd2deadad26a90af1f6.png",
     "index.html": "/react_again/index.html",
-    "main.dfee8498.css.map": "/react_again/static/css/main.dfee8498.css.map",
-    "main.50f0d85c.js.map": "/react_again/static/js/main.50f0d85c.js.map",
+    "main.0c51b46f.css.map": "/react_again/static/css/main.0c51b46f.css.map",
+    "main.59ff223f.js.map": "/react_again/static/js/main.59ff223f.js.map",
     "787.d3befce1.chunk.js.map": "/react_again/static/js/787.d3befce1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dfee8498.css",
-    "static/js/main.50f0d85c.js"
+    "static/css/main.0c51b46f.css",
+    "static/js/main.59ff223f.js"
   ]
 }
